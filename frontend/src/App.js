@@ -21,6 +21,7 @@ import UserProfile from "./components/user/UserProfile";
 import PersistLogin from "./components/PersistLogin";
 import CompanyProfile from "./components/company/CompanyProfile";
 import UpdateJob from "./pages/UpdateJob";
+import JobApplicants from "./components/company/JobApplicants";
 
 const App = () => {
   return (
@@ -67,6 +68,7 @@ const App = () => {
                     <Route path="posted-jobs" element={<CompanyPostedJobs />} />
                     <Route path="edit-job/:id" element={<UpdateJob />} />
                     <Route path="profile" element={<CompanyProfile />} />
+                    <Route path="job-applicants/:id" element={<JobApplicants />} /> 
                   </Route>
                 </Route>
               </Route>

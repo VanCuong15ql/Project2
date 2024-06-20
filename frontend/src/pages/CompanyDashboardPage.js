@@ -22,8 +22,8 @@ const CompanyDashBoardPage = () => {
 
   return (
     <>
-      <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4 relative">
-        <nav className="flex justify-between items-center py-6">
+      <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4 relative border-b border-gray-300  ">
+        <nav className="flex justify-between items-center py-6 ">
           <div className="flex items-center gap-[220px] justify-around ">
             <div className="flex items-center gap-2 text-2xl text-black font-bold">
               <PagesIcon />

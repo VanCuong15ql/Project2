@@ -31,17 +31,17 @@ const Home = () => {
     setQueryLocation(e.target.value);
   };
 
-  const filteredByTitle = jobs.filter((job) =>
-    job.title.toLowerCase().includes(query.toLowerCase())
-  );
-
-  const filteredByLocation = queryLocation === "Others"
-    ? jobs.filter(
-        (job) => !["ho chi minh", "ha noi", "da nang"].includes(job.location.toLowerCase())
+  const filteredByTitle = query
+    ? jobs.filter((job) =>
+        job.title.toLowerCase().includes(query.toLowerCase())
       )
-    : jobs.filter(
-        (job) => job.location.toLowerCase().includes(queryLocation.toLowerCase())
-      );
+    : jobs;
+
+  const filteredByLocation = queryLocation
+    ? jobs.filter((job) =>
+        job.location.toLowerCase().includes(queryLocation.toLowerCase())
+      )
+    : jobs;
 
   const handleChange = (e) => {
     setSelectedCategory(e.target.value);
@@ -81,12 +81,14 @@ const Home = () => {
           experience,
           employmentType,
           createdAt,
+          genderRequirement
         }) =>
           location.toLowerCase() === selectedCategory.toLowerCase() ||
           parseInt(salary) <= parseInt(selectedCategory) ||
           createdAt >= selectedCategory ||
           experience.toLowerCase() === selectedCategory.toLowerCase() ||
-          employmentType.toLowerCase() === selectedCategory.toLowerCase()
+          employmentType.toLowerCase() === selectedCategory.toLowerCase()||
+          genderRequirement.toLowerCase() === selectedCategory.toLowerCase()
       );
     }
     const { startIndex, endIndex } = calculatePageRange();

@@ -1,43 +1,25 @@
-import React from 'react'
-import InputField from './InputField'
+import React from 'react';
+import InputField from './InputField';
 
-const EmploymentType = ({handleChange}) => {
+const EmploymentType = ({ handleChange }) => {
   return (
     <div>
       <h4 className="text-lg font-medium mb-2">Type of Employment</h4>
       <div>
         <label className="sizebar-label-container">
-          <input type="radio" name="test5"id="test5"  value="" onChange={handleChange} />
+          <input type="radio" name="employmentType" value="" onChange={handleChange} />
           <span className="checkmark"> </span> All
         </label>
         <br />
-        <InputField
-          handleChange={handleChange}
-          value="full-time"
-          title="Full-time"
-          name="test5"
-        />
+        <InputField handleChange={handleChange} value="Toàn thời gian" title="Toàn thời gian" name="employmentType" />
         <br />
-         <InputField
-          handleChange={handleChange}
-          value="part-time"
-          title="Part-time"
-          name="test5"
-        />
+        <InputField handleChange={handleChange} value="Bán thời gian" title="Bán thời gian" name="employmentType" />
         <br />
-        
-        <InputField
-          handleChange={handleChange}
-          value="temporary"
-          title="Temporary"
-          name="test5"
-        />
-        
-       
+        <InputField handleChange={handleChange} value="Thực tập" title="Thực tập" name="employmentType" />
         
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default EmploymentType
+export default EmploymentType;
